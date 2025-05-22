@@ -11,7 +11,7 @@ export default async function PostComponent({post}: Props) {
 	return (
 		<>
 			<li >
-				<Link href={`/post/${post.id}`}>{post.title}</Link>
+				<Link href={`/posts/${post.id}`}>{post.title}</Link>
 			</li>
 		</>
 	);

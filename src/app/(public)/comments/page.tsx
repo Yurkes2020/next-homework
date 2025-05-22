@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import {fetchComments} from "@/app/servises/api.servise";
 import {Comment} from "@/app/models/types";
+import CommentComponent from "@/app/components/commentComponent";
 
 export default async function CommentsPage() {
 	const comments: Comment[] = await fetchComments();
@@ -10,11 +10,7 @@ export default async function CommentsPage() {
 			<h1>Comments</h1>
 			<ul>
 				{comments.slice(0, 20).map(comment => (
-					<li key={comment.id}>
-						<Link href={`/comments/${comment.id}`}>
-							{comment.name}
-						</Link>
-					</li>
+					<CommentComponent key={comment.id} comment={comment}/>
 				))}
 			</ul>
 		</div>

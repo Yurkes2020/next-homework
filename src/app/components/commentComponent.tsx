@@ -1,18 +1,18 @@
 import Link from "next/link";
-import {User} from "@/app/models/types";
+import {Comment} from "@/app/models/types";
 
 type Props = {
-	user: User;
+	comment: Comment;
 }
 
-export default async function CommentComponent({user}: Props) {
+export default async function CommentComponent({comment}: Props) {
 
 
 	return (
 		<>
-			<li key={user.id}>
-				<Link href={`/users/${user.id}`}>
-					{user.name} ({user.username})
+			<li >
+				<Link href={`/comments/${comment.id}`}>
+					{comment.name}
 				</Link>
 			</li>
 		</>
