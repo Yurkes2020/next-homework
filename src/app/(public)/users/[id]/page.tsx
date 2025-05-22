@@ -1,14 +1,12 @@
 import { User } from "@/app/models/types";
 import {fetchUser} from "@/app/servises/api.servise";
-import {SearchParams} from "next/dist/server/request/search-params";
 
 type Props ={
 	params: Promise<{ id: string }> ;
-	searchParams: Promise<SearchParams>
 }
 
 
-export default async function UserPage({ params,searchParams }: Props )  {
+export default async function UserPage({ params }: Props )  {
 	const {id} = await params;
 	const user: User = await fetchUser(id);
 

@@ -6,6 +6,8 @@ import PostComponent from "@/app/components/postComponent";
 export default async function PostsPage() {
 	const posts: Post[] = await fetchPosts();
 
+	console.log(posts)
+
 	return (
 		<div>
 			<h1>Posts</h1>

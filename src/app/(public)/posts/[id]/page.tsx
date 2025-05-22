@@ -1,18 +1,17 @@
 import {Post} from "@/app/models/types";
 import {fetchPost} from "@/app/servises/api.servise";
-import {SearchParams} from "next/dist/server/request/search-params";
 
 type Props ={
 	params: Promise<{ id: string }> ;
-	searchParams: Promise<SearchParams>
 }
 
-
-export default async function PostPage({ params,searchParams }: Props)
+export default async function PostPage({ params }: Props)
 
 {
 	const {id} = await params;
 	const post: Post = await fetchPost(id);
+
+	console.log(post)
 
 	console.log(id)
 
